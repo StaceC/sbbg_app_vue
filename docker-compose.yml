@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  web:
+    build: .
+    volumes:
+      - ./package.json:/usr/src/app/package.json
+      - ./yarn.lock:/usr/src/app/yarn.lock
+      - ./vue.config.js:/usr/src/app/vue.config.js
+      - ./src:/usr/src/app/src
+      - ./public:/usr/src/app/public
+    ports:
+      - "8091:8091"
